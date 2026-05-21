@@ -58,10 +58,10 @@ export default function Navbar() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <a href="/" className="group flex items-center gap-2.5 transition-all hover:opacity-90">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-purple-600 shadow-sm shadow-primary/25 transition-transform group-hover:scale-105">
-            <GraduationCap className="h-5 w-5 text-primary-foreground" />
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-600 to-purple-600 shadow-sm shadow-indigo-500/25 transition-transform group-hover:scale-105">
+            <GraduationCap className="h-5 w-5 text-white" />
           </div>
-          <span className="text-lg font-bold tracking-tight bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text">LMS Platform</span>
+          <span className="text-lg font-bold tracking-tight bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">EduMaster</span>
         </a>
 
         {/* Desktop Nav */}

@@ -1,0 +1,18 @@
+# =============================================================================
+# PersistentVolumeClaim pour MinIO
+# =============================================================================
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: minio-pvc
+  namespace: edumaster
+  labels:
+    app: minio
+    component: storage
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: longhorn
+  resources:
+    requests:
+      storage: 50Gi

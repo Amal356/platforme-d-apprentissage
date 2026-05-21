@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Plateforme d'Apprentissage - ÉduLearn Pro",
+  title: "Plateforme d'Apprentissage - EduMaster",
   description: "Apprenez, progressez et excellez avec notre plateforme d'apprentissage en ligne innovante",
 };
 
@@ -23,7 +23,7 @@ export default function RootLayout({
             <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
               <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
                 <div>
-                  <h3 className="mb-3 text-sm font-semibold tracking-wider uppercase text-slate-900">ÉduLearn Pro</h3>
+                  <h3 className="mb-3 text-sm font-semibold tracking-wider uppercase text-slate-900">EduMaster</h3>
                   <ul className="space-y-2 text-sm text-slate-600">
                     <li><a href="/courses" className="transition-colors hover:text-teal-600">Explorer les cours</a></li>
                     <li><a href="/dashboard" className="transition-colors hover:text-teal-600">Tableau de bord</a></li>
@@ -44,7 +44,7 @@ export default function RootLayout({
                 </div>
               </div>
               <div className="mt-8 border-t border-slate-200 pt-6 text-center text-sm text-slate-500">
-                © {new Date().getFullYear()} ÉduLearn Pro. Tous droits réservés.
+                © {new Date().getFullYear()} EduMaster. Tous droits réservés.
               </div>
             </div>
           </footer>

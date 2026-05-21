@@ -8,18 +8,18 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section - Unique Design */}
-      <section className="relative overflow-hidden border-b bg-gradient-to-br from-cyan-50 via-background to-teal-50">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,hsl(174 72% 40%/0.12),transparent 60%)]" />
+      <section className="relative overflow-hidden border-b bg-gradient-to-br from-indigo-50 via-background to-purple-50">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,hsl(243_75%_59%/0.12),transparent 60%)]" />
         <div className="relative mx-auto max-w-7xl px-4 py-32 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
-              <Badge variant="outline" className="mb-6 gap-2 px-5 py-2.5 text-base bg-teal-50 text-teal-800 border-teal-200 animate-fade-in">
-                <Zap className="h-4 w-4 text-teal-600" />
+              <Badge variant="outline" className="mb-6 gap-2 px-5 py-2.5 text-base bg-indigo-50 text-indigo-800 border-indigo-200 animate-fade-in">
+                <Zap className="h-4 w-4 text-indigo-600" />
                 Nouvelle Plateforme 2026
               </Badge>
               <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl animate-fade-in-up">
                 Apprenez, Progressez,{" "}
-                <span className="bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
                   Excellez
                 </span>
               </h1>
@@ -27,13 +27,13 @@ export default function Home() {
                 Accédez à des cours de qualité, un tuteur IA personnalisé, et suivez votre progression en temps réel.
               </p>
               <div className="mt-10 flex flex-col items-center lg:items-start justify-center gap-4 sm:flex-row animate-fade-in-up stagger-3">
-                <Button size="lg" className="gap-2 text-base bg-teal-600 hover:bg-teal-700 shadow-lg shadow-teal-500/25 transition-all hover:shadow-xl hover:shadow-teal-500/35" asChild>
+                <Button size="lg" className="gap-2 text-base bg-indigo-600 hover:bg-indigo-700 shadow-lg shadow-indigo-500/25 transition-all hover:shadow-xl hover:shadow-indigo-500/35" asChild>
                   <a href="/courses">
                     Explorer les cours
                     <ArrowRight className="h-4 w-4" />
                   </a>
                 </Button>
-                <Button variant="outline" size="lg" className="gap-2 text-base border-2 border-teal-200 text-teal-700 hover:bg-teal-50 transition-all" asChild>
+                <Button variant="outline" size="lg" className="gap-2 text-base border-2 border-indigo-200 text-indigo-700 hover:bg-indigo-50 transition-all" asChild>
                   <a href="/auth/login">
                     Se connecter
                   </a>
@@ -41,14 +41,14 @@ export default function Home() {
               </div>
             </div>
             <div className="relative animate-fade-in-up stagger-3">
-              <div className="absolute -inset-4 bg-gradient-to-tr from-teal-200/40 to-cyan-200/40 rounded-3xl blur-2xl" />
-              <Card className="relative overflow-hidden border-0 bg-white shadow-2xl shadow-teal-100/60">
+              <div className="absolute -inset-4 bg-gradient-to-tr from-indigo-200/40 to-purple-200/40 rounded-3xl blur-2xl" />
+              <Card className="relative overflow-hidden border-0 bg-white shadow-2xl shadow-indigo-100/60">
                 <CardContent className="p-8">
                   <div className="grid grid-cols-2 gap-6">
                     <div className="space-y-3">
                       <div className="flex items-center gap-3">
-                        <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-teal-100">
-                          <GraduationCap className="h-6 w-6 text-teal-600" />
+                        <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-indigo-100">
+                          <GraduationCap className="h-6 w-6 text-indigo-600" />
                         </div>
                         <div>
                           <p className="text-2xl font-bold text-slate-800">+1200</p>
@@ -56,8 +56,8 @@ export default function Home() {
                         </div>
                       </div>
                       <div className="flex items-center gap-3">
-                        <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-100">
-                          <MessageSquare className="h-6 w-6 text-cyan-600" />
+                        <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-purple-100">
+                          <MessageSquare className="h-6 w-6 text-purple-600" />
                         </div>
                         <div>
                           <p className="text-2xl font-bold text-slate-800">24/7</p>
@@ -96,7 +96,7 @@ export default function Home() {
       {/* Features Grid - New Layout */}
       <section className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center mb-16">
-          <Badge variant="outline" className="mb-4 border-cyan-200 text-cyan-800 bg-cyan-50">Fonctionnalités</Badge>
+          <Badge variant="outline" className="mb-4 border-indigo-200 text-indigo-800 bg-indigo-50">Fonctionnalités</Badge>
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-slate-900">
             Pourquoi choisir notre plateforme ?
           </h2>
@@ -106,15 +106,15 @@ export default function Home() {
             icon={<GraduationCap className="h-7 w-7" />}
             title="Cours Premium"
             description="Apprenez avec des contenus structurés, des vidéos HD et des exercices pratiques."
-            color="from-teal-500 to-teal-600"
-            bg="bg-teal-50"
+            color="from-indigo-500 to-indigo-600"
+            bg="bg-indigo-50"
           />
           <FeatureCard
             icon={<MessageSquare className="h-7 w-7" />}
             title="Tuteur IA"
             description="Posez vos questions à tout moment et recevez des réponses personnalisées instantanément."
-            color="from-cyan-500 to-cyan-600"
-            bg="bg-cyan-50"
+            color="from-purple-500 to-purple-600"
+            bg="bg-purple-50"
           />
           <FeatureCard
             icon={<TrendingUp className="h-7 w-7" />}
@@ -127,11 +127,11 @@ export default function Home() {
       </section>
 
       {/* Highlights Section */}
-      <section className="border-y bg-gradient-to-r from-slate-50 via-teal-50/50 to-slate-50">
+      <section className="border-y bg-gradient-to-r from-slate-50 via-indigo-50/50 to-slate-50">
         <div className="mx-auto max-w-5xl grid grid-cols-2 md:grid-cols-4 gap-8 px-4 py-16 sm:px-6 lg:px-8">
           {[
-            { icon: <Clock className="h-6 w-6" />, value: "100%", label: "En ligne", color: "text-teal-600" },
-            { icon: <Award className="h-6 w-6" />, value: "Certifié", label: "Diplômes", color: "text-cyan-600" },
+            { icon: <Clock className="h-6 w-6" />, value: "100%", label: "En ligne", color: "text-indigo-600" },
+            { icon: <Award className="h-6 w-6" />, value: "Certifié", label: "Diplômes", color: "text-purple-600" },
             { icon: <Zap className="h-6 w-6" />, value: "Rapide", label: "Apprentissage", color: "text-emerald-600" },
             { icon: <Star className="h-6 w-6" />, value: "Premium", label: "Qualité", color: "text-amber-600" },
           ].map((item, i) => (
@@ -148,7 +148,7 @@ export default function Home() {
 
       {/* CTA Section - New Design */}
       <section className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
-        <Card className="overflow-hidden border-0 bg-gradient-to-br from-teal-600 via-cyan-600 to-blue-700 text-white shadow-2xl shadow-teal-500/30">
+        <Card className="overflow-hidden border-0 bg-gradient-to-br from-indigo-600 via-purple-600 to-indigo-700 text-white shadow-2xl shadow-indigo-500/30">
           <CardContent className="flex flex-col items-center p-12 text-center sm:p-16">
             <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-3xl bg-white/20 backdrop-blur-xl">
               <Award className="h-10 w-10" />
@@ -158,7 +158,7 @@ export default function Home() {
               Rejoignez des milliers d'étudiants et développez vos compétences aujourd'hui. L'inscription est gratuite !
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
-              <Button size="lg" variant="secondary" className="text-base font-semibold bg-white text-teal-700 hover:bg-slate-100 shadow-xl transition-all hover:-translate-y-1" asChild>
+              <Button size="lg" variant="secondary" className="text-base font-semibold bg-white text-indigo-700 hover:bg-slate-100 shadow-xl transition-all hover:-translate-y-1" asChild>
                 <a href="/auth/register">
                   Créer un compte gratuit
                   <ArrowRight className="h-4 w-4 ml-2" />

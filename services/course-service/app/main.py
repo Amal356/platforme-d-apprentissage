@@ -30,7 +30,7 @@ from app.database import engine, Base
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
-    title="LMS Course Service",
+    title="EduMaster Course Service",
     description="Course management, lessons, enrollments, and search",
     version="1.0.0",
 )

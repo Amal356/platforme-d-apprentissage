@@ -1,0 +1,10 @@
+# =============================================================================
+# Namespace pour EduMaster
+# =============================================================================
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: edumaster
+  labels:
+    name: edumaster
+    environment: production

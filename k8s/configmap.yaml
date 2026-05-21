@@ -1,0 +1,36 @@
+# =============================================================================
+# ConfigMap pour les variables d'environnement partagées
+# =============================================================================
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: edumaster-config
+  namespace: edumaster
+data:
+  # Database URLs
+  POSTGRES_HOST: "postgres-service"
+  POSTGRES_PORT: "5432"
+  POSTGRES_DB: "lms_courses"
+  MONGODB_HOST: "mongodb-service"
+  MONGODB_PORT: "27017"
+  MONGODB_DB: "lms_users"
+  REDIS_HOST: "redis-service"
+  REDIS_PORT: "6379"
+  
+  # Service URLs
+  COURSE_SERVICE_URL: "http://course-service:8001"
+  USER_SERVICE_URL: "http://user-service:8002"
+  ANALYTICS_SERVICE_URL: "http://analytics-service:8003"
+  AI_TUTOR_SERVICE_URL: "http://ai-tutor-service:8004"
+  
+  # n8n
+  N8N_WEBHOOK_BASE_URL: "http://n8n-service:5678"
+  WEBHOOK_URL: "http://n8n-service:5678"
+  
+  # MinIO
+  MINIO_ENDPOINT: "minio-service:9000"
+  MINIO_CONSOLE_ADDRESS: ":9001"
+  
+  # Ollama/LLM
+  OPENAI_BASE_URL: "http://host.docker.internal:11434/v1"
+  LLM_MODEL: "llama3.2"

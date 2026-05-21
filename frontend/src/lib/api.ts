@@ -19,7 +19,15 @@
 
 // Use relative URLs from browser (nginx proxy), internal URL from server
 function getBaseUrl() {
-  if (typeof window !== "undefined") return "";
+  if (typeof window !== "undefined") {
+    // En mode navigateur, utiliser le port 80 (Nginx) pour les APIs
+    const origin = window.location.origin;
+    // Si on est sur le port 3000 (dev), rediriger vers le port 80 (Nginx)
+    if (origin.includes(':3000')) {
+      return origin.replace(':3000', '');
+    }
+    return origin;
+  }
   return process.env.NEXT_PUBLIC_API_URL || "http://nginx-gateway";
 }
 

@@ -1,0 +1,18 @@
+# =============================================================================
+# PersistentVolumeClaim pour n8n
+# =============================================================================
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: n8n-pvc
+  namespace: edumaster
+  labels:
+    app: n8n
+    component: automation
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: longhorn
+  resources:
+    requests:
+      storage: 5Gi

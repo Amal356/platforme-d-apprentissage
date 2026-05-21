@@ -1,0 +1,103 @@
+# =============================================================================
+# User Service Deployment & Service
+# =============================================================================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-service
+  namespace: edumaster
+  labels:
+    app: user-service
+    component: backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: user-service
+  template:
+    metadata:
+      labels:
+        app: user-service
+        component: backend
+    spec:
+      containers:
+      - name: user-service
+        image: edumaster/user-service:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8002
+          name: http
+        env:
+        - name: MONGODB_URI
+          value: "mongodb://$(MONGODB_HOST):$(MONGODB_PORT)/$(MONGODB_DB)"
+        - name: MONGODB_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: edumaster-config
+              key: MONGODB_HOST
+        - name: MONGODB_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: edumaster-config
+              key: MONGODB_PORT
+        - name: MONGODB_DB
+          valueFrom:
+            configMapKeyRef:
+              name: edumaster-config
+              key: MONGODB_DB
+        - name: JWT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: edumaster-secrets
+              key: JWT_SECRET
+        - name: REDIS_URL
+          value: "redis://$(REDIS_HOST):$(REDIS_PORT)/1"
+        - name: REDIS_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: edumaster-config
+              key: REDIS_HOST
+        - name: REDIS_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: edumaster-config
+              key: REDIS_PORT
+        - name: PORT
+          value: "8002"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8002
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8002
+          initialDelaySeconds: 10
+          periodSeconds: 5
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: user-service
+  namespace: edumaster
+  labels:
+    app: user-service
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8002
+    targetPort: 8002
+    protocol: TCP
+    name: http
+  selector:
+    app: user-service

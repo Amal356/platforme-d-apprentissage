@@ -1,0 +1,35 @@
+# =============================================================================
+# Longhorn Installation pour K3s
+# =============================================================================
+# Installation via Helm (recommandé) ou kubectl apply
+# 
+# Option 1 - Via Helm (recommandé):
+# helm repo add longhorn https://charts.longhorn.io
+# helm repo update
+# helm install longhorn longhorn/longhorn --namespace longhorn-system --create-namespace
+#
+# Option 2 - Via kubectl:
+# kubectl apply -f https://raw.githubusercontent.com/longhorn/longhorn/v1.6.0/deploy/longhorn.yaml
+#
+# Vérification:
+# kubectl get pods -n longhorn-system
+# kubectl get storageclass
+# =============================================================================
+
+---
+# StorageClass Longhorn (créé automatiquement par Longhorn, mais on peut le personnaliser)
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: longhorn
+  annotations:
+    storageclass.kubernetes.io/is-default-class: "true"
+provisioner: driver.longhorn.io
+allowVolumeExpansion: true
+reclaimPolicy: Retain
+volumeBindingMode: Immediate
+parameters:
+  numberOfReplicas: "2"
+  staleReplicaTimeout: "2880"
+  fromBackup: ""
+  fsType: "ext4"
